@@ -1,10 +1,9 @@
 import chromium from '@sparticuz/chromium-min';
 import puppeteer from 'puppeteer-core';
 import { supabase } from "../../../../lib/supabase";
-import { Movie } from "../../../../lib/types";
 import moment from 'moment';
 
-export async function GET(request: Request) {
+export async function GET() {
 
     moment.locale('zh-hk');
 

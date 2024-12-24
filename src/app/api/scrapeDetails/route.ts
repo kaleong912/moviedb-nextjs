@@ -1,11 +1,10 @@
 import chromium from '@sparticuz/chromium-min';
 import puppeteer from 'puppeteer-core';
 import { supabase } from "../../../../lib/supabase";
-import { Movie } from "../../../../lib/types";
 import moment from 'moment';
 
 
-export async function GET(request: Request) {
+export async function GET() {
 
     const {data, error} = await supabase
         .from('movies')
@@ -52,7 +51,7 @@ export async function GET(request: Request) {
             const formattedDate = moment(content, "YYYY年MM月DD日").format('YYYY-MM-DD HH:mm:ss');
             console.log(`Movie ID: ${item.id}, From Date: ${content}, Released Date: ${formattedDate}`);
 
-            const {data, error} = await supabase
+            await supabase
             .from('movies')
             .update({ released_at: formattedDate })
             .eq('id', item.id)

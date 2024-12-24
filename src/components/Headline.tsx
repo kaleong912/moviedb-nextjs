@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { themeColor } from "../../lib/theme";
 import "../app/styles/headline.css";
 
 export function Headline() {

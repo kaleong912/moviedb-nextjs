@@ -1,11 +1,10 @@
 import chromium from '@sparticuz/chromium-min';
 import puppeteer from 'puppeteer-core';
 import { supabase } from "../../../../lib/supabase";
-import { Movie } from "../../../../lib/types";
 import moment from 'moment';
 
 
-export async function GET(request: Request) {
+export async function GET() {
 
     const {data, error} = await supabase
         .from('movies')
@@ -56,7 +55,7 @@ export async function GET(request: Request) {
 
             console.log(trimmedActor)
 
-            const { data, error } = await supabase
+            const { data } = await supabase
             .from('actors')
             .select('id')
             .eq('name', trimmedActor)
@@ -86,7 +85,7 @@ export async function GET(request: Request) {
                 actor_id = data.id
             }
 
-            const { data: insertActorData, error: InsertActorError } = await supabase
+            const { error: InsertActorError } = await supabase
             .from('movies_actors')
             .upsert({ movie_id: item.id, actor_id: actor_id })
 

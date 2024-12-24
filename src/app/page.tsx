@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Tabs } from '../components/Tabs'
 import { MovieList } from '../components/MovieList'
 import { Headline } from '../components/Headline'
-import { themeColor, backgroundColor } from '../../lib/theme'
+import { backgroundColor } from '../../lib/theme'
 import { supabase } from '../../lib/supabase'
 import { Movie } from "../../lib/types";
 

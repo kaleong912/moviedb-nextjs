@@ -1,6 +1,6 @@
 import { supabase } from "../../../../lib/supabase";
 
-export async function GET(request: Request) {
+export async function GET() {
     const { data, error } = await supabase.from('movies')
     .select('*, actors(*), youtube:movies_youtubers(youtube_link, youtubers:youtubers(name))')
     .order('released_at', { ascending: false })

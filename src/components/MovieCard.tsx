@@ -1,10 +1,8 @@
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
-import { ExternalLink } from 'lucide-react'
 import { themeColor } from '../../lib/theme'
 import moment from 'moment'
-import { act } from 'react'
-import { Movie, Youtube, Youtubers } from "../../lib/types";
+import { Youtube } from "../../lib/types";
 
 interface MovieCardProps {
   title: string
@@ -17,7 +15,7 @@ interface MovieCardProps {
 
 moment.locale('zh-hk')
 
-export function MovieCard({ title, poster, released_at, youtube, is_upcoming, actors }: MovieCardProps) {
+export function MovieCard({ title, poster, released_at, youtube, actors }: MovieCardProps) {
   return (
     <div className="movie-card flex flex-col shadow-lg transition-transform duration-300 ease-in-out w-full max-w-xs">
       <div className="relative w-full h-96 movie-img mb-2">

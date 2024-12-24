@@ -1,11 +1,9 @@
 import chromium from '@sparticuz/chromium-min';
 import puppeteer from 'puppeteer-core';
-import moment from 'moment';
 import { supabase } from "../../../../lib/supabase";
-import { Movie } from "../../../../lib/types";
 
 
-export async function GET(request: Request) {
+export async function GET() {
 
     const {data, error} = await supabase
         .from('movies')
@@ -51,7 +49,7 @@ export async function GET(request: Request) {
 
             await page.close()
 
-            const {data, error} = await supabase
+            await supabase
                 .from('movies')
                 .update({poster: content})
                 .eq('id', item.id)
