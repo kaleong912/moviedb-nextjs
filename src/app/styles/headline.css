@@ -68,13 +68,13 @@
 	color: transparent;
 	-webkit-text-stroke: 1px #fff;
 	text-shadow: 
-		-0.2rem -0.2rem 1rem var(--neon-text-light),
-		0.2rem 0.2rem 1rem var(--neon-text-light),
-		0 0 2rem var(--neon-text-color),
-		0 0 4rem var(--neon-text-color),
-		0 0 6rem var(--neon-text-color),
-		0 0 8rem var(--neon-text-color),
-		0 0 10rem var(--neon-text-color);
+		-0.2rem -0.2rem .1rem var(--neon-text-light),
+		0.2rem 0.2rem .1rem var(--neon-text-light),
+		0 0 .2rem var(--neon-text-color),
+		0 0 .4rem var(--neon-text-color),
+		0 0 .6rem var(--neon-text-color),
+		0 0 .8rem var(--neon-text-color),
+		0 0 1rem var(--neon-text-color);
 	
 }
 
