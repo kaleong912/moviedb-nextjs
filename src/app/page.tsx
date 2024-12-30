@@ -26,7 +26,14 @@ export default function Home() {
         if (error) {
           console.error( error)
         } else {
-          setReleasingMovies( data.filter((movie) => !movie.is_upcoming) )
+          console.table(data)
+          setReleasingMovies( data.filter((movie) => !movie.is_upcoming).sort((a, b) => {
+            const al = a.youtube.length == 0;
+            const bl = b.youtube.length == 0;
+
+            return (al == bl) ? 0 : (al ? 1 : -1);
+
+          }) )
           setUpcomingMovies( data.filter((movie) => movie.is_upcoming).sort((a, b) => new Date(a.released_at).getTime() - new Date(b.released_at).getTime() ))
         }
     }
